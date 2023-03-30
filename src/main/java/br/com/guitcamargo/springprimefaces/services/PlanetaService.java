@@ -4,8 +4,13 @@ import br.com.guitcamargo.springprimefaces.domain.PlanetaEntity;
 import br.com.guitcamargo.springprimefaces.infra.error.ErrorEnum;
 import br.com.guitcamargo.springprimefaces.infra.exceptions.NotFoundException;
 import br.com.guitcamargo.springprimefaces.repositories.PlanetaRepository;
+import br.com.guitcamargo.springprimefaces.repositories.specification.PlanetaSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import static org.springframework.data.jpa.domain.Specification.where;
 
 @Service
 public class PlanetaService {
@@ -28,5 +33,15 @@ public class PlanetaService {
         //verifica se existe o registro para nao precisar tratar exception do banco.
         this.findById(idPlaneta);
         repository.deleteById(idPlaneta);
+    }
+
+    //Poderia utilizar o FindAll(Example<S>) para ser menos verboso, mas particularmente gosto da estrutura do specification
+    public Page<PlanetaEntity> findByFilter(Pageable pageable, String nome, String clima, String terreno) {
+        return repository.findAll(
+                where(PlanetaSpecification.nome(nome))
+                    .and(PlanetaSpecification.clima(clima)
+                    .and(PlanetaSpecification.terreno(terreno))),
+                pageable
+        );
     }
 }
