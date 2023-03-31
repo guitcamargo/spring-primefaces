@@ -1,6 +1,6 @@
 package br.com.guitcamargo.springprimefaces.endpoints.resource;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
@@ -8,8 +8,9 @@ import org.springframework.hateoas.server.core.Relation;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-@JsonPropertyOrder({ "id", "nome", "clima", "terreno"})
+@JsonPropertyOrder({ "id", "nome", "clima", "terreno", "films"})
 @Relation(value = "planeta", collectionRelation = "planetas")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PlanetaResource extends RepresentationModel<PlanetaResource> {
 
     private Long id;
@@ -25,6 +26,8 @@ public class PlanetaResource extends RepresentationModel<PlanetaResource> {
     @NotBlank
     @Size(max = 80, min = 1)
     private String terreno;
+
+    private Integer films;
 
 
     public Long getId() {
@@ -57,5 +60,13 @@ public class PlanetaResource extends RepresentationModel<PlanetaResource> {
 
     public void setTerreno(String terreno) {
         this.terreno = terreno;
+    }
+
+    public Integer getFilms() {
+        return films;
+    }
+
+    public void setFilms(Integer films) {
+        this.films = films;
     }
 }

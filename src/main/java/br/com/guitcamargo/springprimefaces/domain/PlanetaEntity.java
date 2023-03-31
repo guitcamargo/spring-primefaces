@@ -21,6 +21,9 @@ public class PlanetaEntity {
     @Column(name = "TERRENO")
     private String terreno;
 
+    @Transient
+    private Integer films;
+
     public PlanetaEntity(){
 
     }
@@ -62,6 +65,14 @@ public class PlanetaEntity {
 
     public void setTerreno(String terreno) {
         this.terreno = terreno;
+    }
+
+    public Integer getFilms() {
+        return films;
+    }
+
+    public void setFilms(Integer films) {
+        this.films = films;
     }
 
     @Override
