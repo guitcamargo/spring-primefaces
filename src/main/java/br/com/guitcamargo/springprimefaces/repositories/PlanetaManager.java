@@ -24,6 +24,7 @@ public class PlanetaManager {
         if(planetsAndMovies.isEmpty()) {
            this.populatePlanetsAndQuantityMovies();
         }
+        System.out.println("Informações de planetas carregadas");
     }
 
     private void populatePlanetsAndQuantityMovies(){
@@ -31,7 +32,7 @@ public class PlanetaManager {
     }
 
     private void getValuesAndAddMap(String path) {
-        System.out.println("Carregando path:"+path);
+        System.out.println("Carregando planteas e suas informações:"+path);
         ResponseEntity<PlanetasResponseDTO> exchange =
                 restTemplate.exchange(path, HttpMethod.GET, new HttpEntity<>(new HttpHeaders()), PlanetasResponseDTO.class);
 
