@@ -20,6 +20,7 @@ public class PlanetaManagedBean {
 
 
     private PlanetaEntity planeta = new PlanetaEntity();
+    private PlanetaEntity planetaCreate = new PlanetaEntity();
 
     @Autowired
     private PlanetaService planetaService;
@@ -33,6 +34,12 @@ public class PlanetaManagedBean {
 
     public void remove(){
         this.planetaService.delete(planeta.getId());
+        this.findAll();
+    }
+
+    public void save(){
+        this.planetaService.create(planetaCreate);
+        planetaCreate = new PlanetaEntity();
         this.findAll();
     }
 
@@ -67,5 +74,13 @@ public class PlanetaManagedBean {
 
     public void setPlanetaService(PlanetaService planetaService) {
         this.planetaService = planetaService;
+    }
+
+    public PlanetaEntity getPlanetaCreate() {
+        return planetaCreate;
+    }
+
+    public void setPlanetaCreate(PlanetaEntity planetaCreate) {
+        this.planetaCreate = planetaCreate;
     }
 }

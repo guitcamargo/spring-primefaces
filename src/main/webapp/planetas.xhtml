@@ -83,7 +83,7 @@
                 </p:column>
                 <p:column headerText="Aparições em filmes" style="width: 10%;" sortBy="#{planeta.films}"
                           filterBy="#{planeta.films}">
-                    <h:outputText value="#{planeta.films}"/>
+                    <h:outputText value="#{planeta.films == null ? 'Planeta não encontrado em Star Wars' : planeta.films}"/>
                 </p:column>
 
                 <p:column headerText="Remover" width="10%" >
@@ -94,6 +94,30 @@
                 </p:column>
             </p:dataTable>
         </h:form>
+
+        <p:panel>
+            <h:form id="formCadastro">
+                <h:panelGrid columns="1" id="Planetas">
+
+
+                    <h:outputLabel value="Nome"></h:outputLabel>
+                    <p:inputText id="nome" value="#{planetaMB.planetaCreate.nome}"
+                                 label="Nome" required="true" requiredMessage="O Campo Nome é obrigatório.">
+                    </p:inputText>
+                    <h:outputLabel value="Clima"></h:outputLabel>
+                    <p:inputText id="clima" value="#{planetaMB.planetaCreate.clima}"
+                                 label="Clima" required="true" requiredMessage="O Campo Clima é obrigatório.">
+                    </p:inputText>
+                    <h:outputLabel value="Terreno"></h:outputLabel>
+                    <p:inputText id="terreno" value="#{planetaMB.planetaCreate.terreno}"
+                                 label="Terreno" required="true" requiredMessage="O Campo Terreno é obrigatório.">
+                    </p:inputText>
+                </h:panelGrid>
+
+                <p:commandButton value="Salvar" action="#{planetaMB.save}" update="formPlanetas formCadastro"></p:commandButton>
+            </h:form>
+
+        </p:panel>
     </h:body>
 </f:view>
 </html>
