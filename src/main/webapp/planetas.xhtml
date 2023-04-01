@@ -92,29 +92,7 @@
                                 target="#{planetaMB.planeta}" value="#{planeta}"></f:setPropertyActionListener>
                     </p:commandButton>
                 </p:column>
-                <!--                <p:column style="width:10%;text-align: center" headerText="Acoes" exportable="false">-->
-<!--                    <p:commandButton update=":formPlanetas:planetaDetail" oncomplete="PF('itemDialog').show()"-->
-<!--                                     icon="ui-icon-search"-->
-<!--                                     title="Excluir">-->
-<!--                        <f:setPropertyActionListener value="#{planeta}" target="#{planetaMB.planeta}"/>-->
-<!--                    </p:commandButton>-->
-<!--                </p:column>-->
             </p:dataTable>
-            <p:dialog header="Exclusao de planeta" widgetVar="planetaDialog" modal="true" showEffect="fade" hideEffect="fade"
-                      resizable="false">
-                <p:outputPanel id="planetaDetail" style="text-align:center;">
-                    <p:panelGrid columns="2" rendered="#{not empty planetaMB.planeta}" columnClasses="label,value">
-                        <f:facet name="header">
-                            <h:outputLabel>Planeta</h:outputLabel>
-                        </f:facet>
-
-
-                    </p:panelGrid>
-                    <p:panelGrid columns="2" columnClasses="label,value">
-                        <p:button id="btnFechar" value="Fechar" icon="ui-icon-plusthick"/>
-                    </p:panelGrid>
-                </p:outputPanel>
-            </p:dialog>
         </h:form>
     </h:body>
 </f:view>
