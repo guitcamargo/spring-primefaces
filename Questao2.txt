@@ -1,0 +1,9 @@
+Em uma estrutura git onde temos as branchs master e develop, após receber duas solicitações, uma
+para correção de um erro e outra para criação de uma nova funcionalidade. Como deveria ser criada as
+branchs segundo o gitflow? Responda em um arquivo .txt nomeado “Questao2.txt” dentro do projeto do
+Github
+
+R:
+feature-NOME/IDTASK(jira/trello)	Para uma nova funcionalidade
+bug-NOME/IDTASK(jira/trello)	    Para a correção de um BUG.
+hotfix-NOME/IDTASK(jira/trello) 	Quando existe um bug em produção que precisa ser corrigdo rapidamente.
