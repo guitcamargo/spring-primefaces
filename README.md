@@ -39,17 +39,14 @@ O projeto também contempla um RESTfull com hateoas para o domínio planeta cont
 Criação de teste unitário para os recursos rest.
 
 
-O que faltou:
+O que falta:
 ================
 Melhorar:
-  - Tela -> Por falta de tempo, acabei deixando as funcionalidades na mesma tela, o que eu melhoraria? Criaria uma tela .index.xhtml com 2 opções, cadastro / listagem.
+  - Tela ->
     - criação de uma tela isolada para cadastro.
     - criação de uma tela para index.
-  - Criação do dockerfile para nao precisar executar o projeto/baixar dependencias. (falta de tempo)
+  - Criação do dockerfile para nao precisar executar o projeto/baixar dependencias.
   
-  
-Fiz tudo em um total de 6h dividido entre 4 dias.
-
 
 Frameworks e Tecnologias Utilizadas
 ================
