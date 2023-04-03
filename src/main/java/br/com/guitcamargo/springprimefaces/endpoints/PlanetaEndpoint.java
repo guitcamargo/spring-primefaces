@@ -28,8 +28,8 @@ import static org.springframework.http.HttpStatus.OK;
 public class PlanetaEndpoint {
 
     public static final String PLANETA_BASE_URI = "/planetas";
-    private static final String PLANETA_PATH = PLANETA_BASE_URI + "/{idPlaneta}";
-    private static final String PLANETA_MATRIX = PLANETA_BASE_URI + "{matrixVariables}";
+    public static final String PLANETA_PATH = PLANETA_BASE_URI + "/{idPlaneta}";
+    public static final String PLANETA_MATRIX = PLANETA_BASE_URI + "{matrixVariables}";
 
     @Autowired
     PlanetaService service;

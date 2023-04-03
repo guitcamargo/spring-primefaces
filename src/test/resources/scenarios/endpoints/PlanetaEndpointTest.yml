@@ -1,0 +1,14 @@
+createPlanetaOk:
+  requestBody: >-
+    {
+      "nome": "Novo Planeta",
+      "clima": "Novo clima",
+      "terreno": "Novo Terreno"
+    }
+
+createPlanetaError:
+  requestBody: >-
+    {
+       "nome": "Novo Planeta",
+       "clima": "Novo clima"
+     }
